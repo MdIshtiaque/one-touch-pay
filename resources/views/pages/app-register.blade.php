@@ -289,31 +289,34 @@
                 </div>
             </form>
         </div>
-
         <div id="submissionData" class="mt-10">
             <h4 class="mb-4 text-xl font-semibold text-gray-900">Registered Applications</h4>
-            <table class="w-full text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                <tr style="background-color: #4f46e5; color: white">
-                    <th scope="col" class="px-6 py-3 text-center">App Name</th>
-                    <th scope="col" class="px-6 py-3 text-center">Customer Name</th>
-                    <th scope="col" class="px-6 py-3 text-center">Customer Email</th>
-                    <th scope="col" class="px-6 py-3 text-center">Action</th>
-                </tr>
-                </thead>
-                <tbody id="submissionTableBody" class="bg-white border-b">
-                <!-- Data rows will be inserted here -->
-                @foreach($items as $item)
-                    <tr>
-                        <td class="text-center">{{ $item->name }}</td>
-                        <td class="text-center">{{ $item->contact_person_name }}</td>
-                        <td class="text-center">{{ $item->contact_person_email }}</td>
-                        <td class="text-center text-blue-700"><button >Details -></button></td>
+            <div class="overflow-x-auto">
+                <table class="min-w-full text-sm text-left text-gray-500">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                    <tr class="bg-indigo-600 text-white">
+                        <th scope="col" class="px-6 py-3 text-center">App Name</th>
+                        <th scope="col" class="px-6 py-3 text-center">Customer Name</th>
+                        <th scope="col" class="px-6 py-3 text-center">Customer Email</th>
+                        <th scope="col" class="px-6 py-3 text-center">Action</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody class="bg-white border-b">
+                    @foreach($items as $item)
+                        <tr>
+                            <td class="px-6 py-4 text-center">{{ $item->name }}</td>
+                            <td class="px-6 py-4 text-center">{{ $item->contact_person_name }}</td>
+                            <td class="px-6 py-4 text-center">{{ $item->contact_person_email }}</td>
+                            <td class="px-6 py-4 text-center text-blue-700">
+                                <button class="text-indigo-600 hover:text-indigo-900">Details -></button>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
+
     </div>
 @endsection
 @push('js')
