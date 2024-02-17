@@ -2,3 +2,4 @@
 <script>
     AOS.init();
 </script>
+@stack('js')

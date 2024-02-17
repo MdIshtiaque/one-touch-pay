@@ -1,51 +1,19 @@
 @extends('welcome')
 @push('css')
     <style>
-        .step {
-            display: none;
-        }
-
-        .step.active {
-            display: block;
-        }
-
-        .stepper-wrapper {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .stepper-item {
-            display: flex;
-            align-items: center;
-        }
-
-        .stepper-item.active .stepper-circle {
-            background-color: #4f46e5;
-        }
-
-        .stepper-circle {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background-color: #d1d5db;
-            line-height: 25px;
-            text-align: center;
-            color: white;
-        }
-
-        .stepper-title {
-            margin-top: 0.5rem;
-            font-size: 0.875rem;
-            text-align: center;
-        }
+        .step { display: none; }
+        .step.active { display: block; }
+        .stepper-wrapper { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+        .stepper-item { display: flex; align-items: center; }
+        .stepper-item.active .stepper-circle { background-color: #4f46e5; }
+        .stepper-circle { width: 25px; height: 25px; border-radius: 50%; background-color: #d1d5db; line-height: 25px; text-align: center; color: white; }
+        .stepper-title { margin-top: 0.5rem; font-size: 0.875rem; text-align: center; }
     </style>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 @endpush
 
 @section('content')
-    <div class="max-w-screen-md mx-auto p-5" data-aos="fade-up">
+    <div class="max-w-screen-md mx-auto p-5">
         <div class="text-center mb-16">
             <p class="mt-4 text-sm leading-7 text-gray-500 font-regular uppercase">
                 Register Your Application
@@ -58,15 +26,15 @@
             <div class="stepper-wrapper">
                 <div class="stepper-item active">
                     <div class="stepper-circle">1</div>
-                    <div class="stepper-title" style="margin-top: 0px !important; margin-left: 5px">Step 1</div>
+                    <div class="stepper-title">Step 1</div>
                 </div>
                 <div class="stepper-item">
                     <div class="stepper-circle">2</div>
-                    <div class="stepper-title" style="margin-top: 0px !important; margin-left: 5px">Step 2</div>
+                    <div class="stepper-title">Step 2</div>
                 </div>
                 <div class="stepper-item">
                     <div class="stepper-circle">3</div>
-                    <div class="stepper-title" style="margin-top: 0px !important; margin-left: 5px">Step 3</div>
+                    <div class="stepper-title">Step 3</div>
                 </div>
             </div>
 
@@ -81,7 +49,7 @@
                                 Application Name
                             </label>
                             <input class="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                   id="grid-email" type="text" name="name" placeholder="TechifyBD" required>
+                                   id="grid-email" type="text" name="name" placeholder="TechifyBD">
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
@@ -92,7 +60,7 @@
                             </label>
                             <input class="appearance-none block w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                    id="grid-first-name" type="text" name="contact_person_name"
-                                   placeholder="Md ishtiaque" required>
+                                   placeholder="Md ishtiaque">
                             <p class="text-red-500 text-xs italic" hidden>Please fill out this field.</p>
                         </div>
                         <div class="w-full md:w-1/2 px-3">
@@ -102,7 +70,7 @@
                             </label>
                             <input class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                    id="grid-last-name" type="email" name="contact_person_email"
-                                   placeholder="Doe@gmail.com" required>
+                                   placeholder="Doe@gmail.com">
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
@@ -112,7 +80,7 @@
                                 Country
                             </label>
                             <input class="appearance-none block w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                   id="grid-first-name" type="text" name="country" value="Bangladesh" required readonly
+                                   id="grid-first-name" type="text" name="country" value="Bangladesh" readonly
                             >
                             <p class="text-red-500 text-xs italic" hidden>Please fill out this field.</p>
                         </div>
@@ -123,7 +91,7 @@
                             </label>
                             <input class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                    id="grid-last-name" type="text" name="business_type_name"
-                                   placeholder="Ecommerce Platform" required>
+                                   placeholder="Ecommerce Platform">
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
@@ -133,7 +101,7 @@
                                 Product Name
                             </label>
                             <input class="appearance-none block w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                   id="grid-first-name" type="text" name="product_name" required
+                                   id="grid-first-name" type="text" name="product_name"
                             >
                             <p class="text-red-500 text-xs italic" hidden>Please fill out this field.</p>
                         </div>
@@ -144,15 +112,12 @@
                             </label>
                             <input class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                    id="grid-last-name" type="text" name="product_profile_name"
-                                   placeholder="" required>
+                                   placeholder="">
                         </div>
                     </div>
                     <div class="flex items-center mb-4 w-full gap-2">
-                        <input id="default-checkbox" type="checkbox" value=""
-                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                               checked disabled>
-                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Is
-                            Use Shipping Method?</label>
+                        <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" checked disabled>
+                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Is Use Shipping Method?</label>
                         <!-- Hidden input to ensure the value is submitted with the form -->
                         <input type="hidden" name="is_use_shipping_method" value="true">
                     </div>
@@ -168,7 +133,7 @@
                                 Currency
                             </label>
                             <input class="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                   id="grid-email" type="text" value="BDT" name="currency" readonly required>
+                                   id="grid-email" type="text" value="BDT" name="currency" readonly>
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
@@ -178,7 +143,7 @@
                                 Transaction Type
                             </label>
                             <input class="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                   id="grid-email" type="text" name="transaction_type" placeholder="online" required>
+                                   id="grid-email" type="text" name="transaction_type" placeholder="online">
                         </div>
                     </div>
                 </div>
@@ -194,7 +159,7 @@
                                 Category
                             </label>
                             <input class="appearance-none block w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                   id="grid-first-name" type="text" name="category[0]" readonly value="success" required
+                                   id="grid-first-name" type="text" name="category[0]"
                             >
                             <p class="text-red-500 text-xs italic" hidden>Please fill out this field.</p>
                         </div>
@@ -204,8 +169,8 @@
                                 url
                             </label>
                             <input class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                   id="grid-last-name" type="text" name="url[0]" required
-                                   placeholder="https://example.com/success">
+                                   id="grid-last-name" type="text" name="url[0]"
+                                   placeholder="">
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
@@ -215,7 +180,7 @@
                                 Category
                             </label>
                             <input class="appearance-none block w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                   id="grid-first-name" type="text" name="category[1]" readonly value="cancel" required
+                                   id="grid-first-name" type="text" name="category[1]"
                             >
                             <p class="text-red-500 text-xs italic" hidden>Please fill out this field.</p>
                         </div>
@@ -225,8 +190,8 @@
                                 url
                             </label>
                             <input class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                   id="grid-last-name" type="text" name="url[1]" required
-                                   placeholder="https://example.com/cancel">
+                                   id="grid-last-name" type="text" name="url[1]"
+                                   placeholder="">
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
@@ -236,7 +201,7 @@
                                 Category
                             </label>
                             <input class="appearance-none block w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                   id="grid-first-name" type="text" name="category[2]" readonly value="fail" required
+                                   id="grid-first-name" type="text" name="category[2]"
                             >
                             <p class="text-red-500 text-xs italic" hidden>Please fill out this field.</p>
                         </div>
@@ -246,8 +211,8 @@
                                 url
                             </label>
                             <input class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                   id="grid-last-name" type="text" name="url[2]" required
-                                   placeholder="https://example.com/fail">
+                                   id="grid-last-name" type="text" name="url[2]"
+                                   placeholder="">
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
@@ -257,7 +222,7 @@
                                 Category
                             </label>
                             <input class="appearance-none block w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                   id="grid-first-name" type="text" name="category[3]" readonly value="ipn" required
+                                   id="grid-first-name" type="text" name="category[3]"
                             >
                             <p class="text-red-500 text-xs italic" hidden>Please fill out this field.</p>
                         </div>
@@ -267,50 +232,31 @@
                                 url
                             </label>
                             <input class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                   id="grid-last-name" type="text" name="url[3]" required
-                                   placeholder="https://example.com/ipn">
+                                   id="grid-last-name" type="text" name="url[3]"
+                                   placeholder="">
                         </div>
                     </div>
                 </div>
 
                 <div class="flex justify-between mt-8">
-                    <button type="button"
-                            class="btn-prev hidden text-white font-bold py-2 px-6 rounded bg-gray-500 hover:bg-gray-600">
-                        Previous
-                    </button>
-                    <button type="button" id="next-btn"
-                            class="btn-next text-white font-bold py-2 px-6 rounded bg-indigo-600 hover:bg-indigo-700">
-                        Next
-                    </button>
-                    <button type="submit" id="submit-btn" style="display: none"
-                            class="btn-next text-white font-bold py-2 px-6 rounded bg-indigo-600 hover:bg-indigo-700">
-                        Submit
-                    </button>
+                    <button type="button" class="btn-prev hidden text-white font-bold py-2 px-6 rounded bg-gray-500 hover:bg-gray-600">Previous</button>
+                    <button type="button" id="next-btn" class="btn-next text-white font-bold py-2 px-6 rounded bg-indigo-600 hover:bg-indigo-700">Next</button>
+                    <button type="submit" id="submit-btn" style="display: none" class="btn-next text-white font-bold py-2 px-6 rounded bg-indigo-600 hover:bg-indigo-700">Submit</button>
                 </div>
             </form>
         </div>
 
         <div id="submissionData" class="mt-10">
-            <h4 class="mb-4 text-xl font-semibold text-gray-900">Registered Applications</h4>
+            <h4 class="mb-4 text-xl font-semibold text-gray-900">Submission Data</h4>
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                <tr style="background-color: #4f46e5; color: white">
-                    <th scope="col" class="px-6 py-3 text-center">App Name</th>
-                    <th scope="col" class="px-6 py-3 text-center">Customer Name</th>
-                    <th scope="col" class="px-6 py-3 text-center">Customer Email</th>
-                    <th scope="col" class="px-6 py-3 text-center">Action</th>
+                <tr>
+                    <th scope="col" class="px-6 py-3">Field</th>
+                    <th scope="col" class="px-6 py-3">Value</th>
                 </tr>
                 </thead>
                 <tbody id="submissionTableBody" class="bg-white border-b">
                 <!-- Data rows will be inserted here -->
-                @foreach($items as $item)
-                    <tr>
-                        <td class="text-center">{{ $item->name }}</td>
-                        <td class="text-center">{{ $item->contact_person_name }}</td>
-                        <td class="text-center">{{ $item->contact_person_email }}</td>
-                        <td class="text-center text-blue-700"><button >Details -></button></td>
-                    </tr>
-                @endforeach
                 </tbody>
             </table>
         </div>
@@ -394,8 +340,7 @@
                             style: {
                                 background: "linear-gradient(to right, #00b09b, #96c93d)",
                             },
-                            onClick: function () {
-                            } // Callback after click
+                            onClick: function(){} // Callback after click
                         }).showToast();
                     })
                     .catch(function (error) {
